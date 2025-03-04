@@ -20,8 +20,11 @@ cd your-repo-name
 Configure SMTP settings in send-mail.php:
 
 $smtpHost = 'smtp.yourmail.com';
+
 $smtpPort = 465;
+
 $smtpUsername = 'your-email@example.com';
+
 $smtpPassword = 'your-email-password';
 
 Upload the files to your web server.
