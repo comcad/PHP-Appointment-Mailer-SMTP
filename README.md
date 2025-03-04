@@ -11,11 +11,11 @@ Installation
 
 Clone this repository:
 
-git clone https://github.com/yourusername/your-repo-name.git
+git clone https://github.com/comcad/PHP-Appointment-Mailer-SMTP.git
 
 Navigate to the project directory:
 
-cd your-repo-name
+cd PHP-Appointment-Mailer-SMTP.git
 
 Configure SMTP settings in send-mail.php:
 
