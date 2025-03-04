@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Website Title -->
+    <title>Booking Website</title>
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Include Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Include Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+
+    </header>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+  <div class="container">
+    <form action="send-email.php" method="POST">
+      <h1>Book an Appointment</h1>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+      <label for="date">Preferred Appointment Date:</label>
+      <input type="text" id="datePicker" name="date" placeholder="Select a date" required>
+      <label for="message">Inquiry Details:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+    <p>.</p>
+ <!-- Initialize Flatpickr -->
+<script>
+    flatpickr("#datePicker", {
+        minDate: "today", // Disable past dates
+        dateFormat: "Y-m-d", // Set date format to match the server requirement
+    });
+</script>
+</body>
+</html>

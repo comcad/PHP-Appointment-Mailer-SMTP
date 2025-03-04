@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    
+}
+
+/* Header Styling */
+header {
+    width: 100%; /* Full-width header */
+    font: 700 0.75rem/1.5rem "Montserrat", sans-serif;
+    
+    list-style-type: none;
+    background-color: #4633af; /* Dark semi-transparent background */
+    padding: 15px 20px; /* Space inside the header */
+    box-sizing: border-box; /* Include padding in total width calculation */
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center content vertically */
+    position: absolute; /* Keep header fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure header is above all content */
+}
+
+/* Make the links display side by side */
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Space between links */
+    font-size: 14px; /* Font size of links */
+    font: "Montserrat", sans-serif;
+}
+
+/* Hover effect for the links */
+header a:hover {
+    color: white; /* Hover color for the links */
+}
+
+/* Form Styling */
+form {
+    background: rgba(0, 0, 0, 0.55); /* Darker semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px; /* Adjust the width of the form */
+    color: white;
+    text-align: left;
+    z-index: 1; /* Ensure the form is above other content */
+    margin-top: 100px; /* Add space between the fixed header and the form */
+}
+
+/* Centering the Form */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 380px; /* Reducing width for a more compact form */
+}
+
+
+
+/* Headings */
+
+
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Inputs and Dropdowns */
+input, select, textarea {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+    
+}
+
+/* Input Hover and Focus Effects */
+input:hover, select:hover, textarea:hover,
+input:focus, select:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Submit Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00c9db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #00c9db;
+    box-shadow: 0px 0px 8px rgba(255, 152, 0, 0.6);
+}
+
+textarea {
+    resize: none;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+}
