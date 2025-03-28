@@ -15,17 +15,18 @@ git clone https://github.com/comcad/PHP-Appointment-Mailer-SMTP.git
 
 Navigate to the project directory:
 
-cd PHP-Appointment-Mailer-SMTP.git
+cd PHP-Appointment-Mailer-SMTP
 
-Configure SMTP settings in send-mail.php:
+Configure SMTP settings in .env:
 
-$smtpHost = 'smtp.yourmail.com';
-
-$smtpPort = 465;
-
-$smtpUsername = 'your-email@example.com';
-
-$smtpPassword = 'your-email-password';
+SMTP_SERVER=mail.yourdomain.com
+SMTP_PORT=465
+SMTP_USERNAME=username@yourdomain.com
+SMTP_PASSWORD=yourpassword
+SMTP_FROM=username@yourdomain.com
+SMTP_TO=username@yourdomain.com
+FORM_URL=https://URL.com/bookings/
+REDIRECT_TO=https://URL.com/
 
 Upload the files to your web server.
 
@@ -38,13 +39,5 @@ Access the booking form via your website.
 Fill in the required information.
 
 Submit the form to receive an email notification of the booking request.
-
-Security Considerations
-
-Use environment variables to store sensitive credentials.
-
-Implement form input validation and sanitization.
-
-Contributing
 
 Feel free to fork this repository and submit pull requests for any improvements.
