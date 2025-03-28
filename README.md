@@ -20,12 +20,19 @@ cd PHP-Appointment-Mailer-SMTP
 Configure SMTP settings in .env:
 
 SMTP_SERVER=mail.yourdomain.com
+
 SMTP_PORT=465
+
 SMTP_USERNAME=username@yourdomain.com
+
 SMTP_PASSWORD=yourpassword
+
 SMTP_FROM=username@yourdomain.com
+
 SMTP_TO=username@yourdomain.com
+
 FORM_URL=https://URL.com/bookings/
+
 REDIRECT_TO=https://URL.com/
 
 Upload the files to your web server.
