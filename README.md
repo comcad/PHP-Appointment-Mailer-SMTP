@@ -7,6 +7,9 @@ SMTP email server (e.g., Gmail, Outlook, or custom SMTP server)
 
 Web server (Apache, Nginx, or similar)
 
+![Screenshot_20250328_104129](https://github.com/user-attachments/assets/bbaaef82-d9cd-4480-831e-42c6631b51ed)
+
+
 Installation
 
 Clone this repository:
