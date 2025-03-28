@@ -14,7 +14,7 @@ Clone this repository:
 git clone https://github.com/comcad/PHP-Appointment-Mailer-SMTP.git
 
 Navigate to the project directory:
-
+```
 cd PHP-Appointment-Mailer-SMTP
 
 Configure SMTP settings in .env:
@@ -34,7 +34,7 @@ SMTP_TO=username@yourdomain.com
 FORM_URL=https://URL.com/bookings/
 
 REDIRECT_TO=https://URL.com/
-
+```
 Upload the files to your web server.
 
 Ensure your server supports PHP and SMTP connections.
