@@ -1,12 +1,25 @@
-<?php
+<?php  
+    // Load dotenv
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+$formurl = $_ENV['FORM_URL'];       
+    
+ 	// Redirect to the form page if accessed directly
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    // Redirect to the form page if accessed directly
-    header('Location: CHANGE THIS TO THE URL OF YOUR BOOKING PAGE');
+   
+    header('Location: ' . $formurl);
     exit;
 }
 ?>
-<?php
-  // 3 emails per hour limiter
+    
+<?php   
+    // Load dotenv
+require 'vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+    
+  // 3 emails per hour limiter start session
     session_start();
 
 // Initialize the email count if not set
@@ -16,7 +29,7 @@ if (!isset($_SESSION['email_count'])) {
 }
 
 // Check if the user has sent 3 emails within an hour
-if ($_SESSION['email_count'] >= 3 && (time() - $_SESSION['first_email_time']) < 3600) {
+if ($_SESSION['email_count'] >= 10 && (time() - $_SESSION['first_email_time']) < 3600) {
     die("Error: You have reached the email limit (3 per hour). Please try again later.");
 }
 
@@ -26,7 +39,7 @@ if ((time() - $_SESSION['first_email_time']) >= 3600) {
     $_SESSION['first_email_time'] = time();
 }
 
-    if ($_SERVER['HTTP_REFERER'] !== 'CHANGE THIS TO THE URL OF YOUR BOOKING PAGE') {
+    if ($_SERVER['HTTP_REFERER'] !== $formurl) {
     die('Unauthorized access.');
 }
 
@@ -43,10 +56,10 @@ if ((time() - $_SESSION['first_email_time']) >= 3600) {
  */
 function smtp_mail($to, $subject, $body) {
     // SMTP server configuration — update these with your details.
-    $smtpServer = '';                   // Your SMTP server
-    $port       = 465;                  // Port 465 for implicit TLS
-    $username   = '';                   // Your SMTP username/email
-    $password   = '';                   // Your SMTP password
+    $smtpServer = $_ENV['SMTP_SERVER'];
+    $port       = $_ENV['SMTP_PORT'];
+    $username   = $_ENV['SMTP_USERNAME'];
+    $password   = $_ENV['SMTP_PASSWORD'];
     $from       = $username;            // Sender email
 
     // Create a stream context that disables certificate verification.
@@ -170,21 +183,24 @@ $emailBody .= "Email: " . $email . "\n";
 $emailBody .= "Phone: " . $phone . "\n";
 $emailBody .= "Preferred Date: " . $date . "\n";
 $emailBody .= "Details:\n" . $message . "\n";
+$smtpto       = $_ENV['SMTP_TO'];
 
 // Send the email
 $result = smtp_mail(
-    "EMAIL GOES HERE", // Your email to receive the form data
+    "$smtpto", // Your email to receive the form data
     "New Appointment Request", 
     $emailBody
 );
 
+$redirectto       = $_ENV['REDIRECT_TO'];
 if ($result === true) {
     $_SESSION['email_count']++; // Increment email count
     // After successfully sending the email
     ob_start();
+    
 echo "<script>
         alert('We have received your request.');
-        window.location.href = 'https://DOMAIN OR REDIRECTION PAGE AFTER FROM IS COMPLETE';
+        window.location.href = '$redirectto';
       </script>";
 exit();
 } else {
