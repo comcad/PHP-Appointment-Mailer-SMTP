@@ -10,15 +10,15 @@ Web server (Apache, Nginx, or similar)
 Installation
 
 Clone this repository:
-
+```
 git clone https://github.com/comcad/PHP-Appointment-Mailer-SMTP.git
-
+```
 Navigate to the project directory:
 ```
 cd PHP-Appointment-Mailer-SMTP
-
+```
 Configure SMTP settings in .env:
-
+```
 SMTP_SERVER=mail.yourdomain.com
 
 SMTP_PORT=465
