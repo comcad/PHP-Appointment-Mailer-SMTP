@@ -1,4 +1,4 @@
-Booking System with PHP and SMTP
+# **PHP Appointment Notification Mailer using SMTP**
 
 This project is a simple booking and scheduling system that uses PHP to handle form submissions and SMTP to send appointment notifications to the website owner.
 
