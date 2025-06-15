@@ -3,14 +3,11 @@
 This project is a simple booking system that uses PHP to handle form submissions and SMTP to send appointment notifications to the website owner.
 
 
-SMTP email server (e.g., Gmail, Outlook, or custom SMTP server)
-
-Web server (Apache, Nginx, or similar)
 
 ![Screenshot_20250328_104129](https://github.com/user-attachments/assets/bbaaef82-d9cd-4480-831e-42c6631b51ed)
 
 
-Installation
+# Installation
 
 Clone this repository:
 ```
@@ -38,11 +35,12 @@ FORM_URL=https://URL.com/bookings/
 
 REDIRECT_TO=https://URL.com/
 ```
+
+# Usage
+
 Upload the files to your web server.
 
 Ensure your server supports PHP and SMTP connections.
-
-Usage
 
 Access the booking form via your website.
 
